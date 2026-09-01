@@ -58,6 +58,24 @@
     });
   }
 
+  /* Swap the product gallery's main image (used when a variant tile is tapped). */
+  function showVariantImage(fullUrl, name) {
+    var main = document.querySelector('[data-gallery-main] img');
+    if (!main) return;
+    main.src = fullUrl;
+    if (name) main.alt = name;
+    var matched = false;
+    document.querySelectorAll('[data-gallery-thumb]').forEach(function (t) {
+      /* Shopify CDN URLs for the same image share a path before the query string. */
+      var same = t.dataset.full && t.dataset.full.split('?')[0] === fullUrl.split('?')[0];
+      t.classList.toggle('is-active', same);
+      if (same && !matched) {
+        matched = true;
+        if (t.scrollIntoView) t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
+    });
+  }
+
   /* ------------------------------------------------------------------ */
   /* Bundle builder                                                      */
   /* ------------------------------------------------------------------ */
@@ -93,6 +111,9 @@
       var id = tile.dataset.variantId;
       var current = selection[id] ? selection[id].qty : 0;
       var next = Math.max(0, current + delta);
+      if (delta > 0 && tile.dataset.variantImageFull) {
+        showVariantImage(tile.dataset.variantImageFull, tile.dataset.variantName);
+      }
       if (next === 0) {
         delete selection[id];
       } else {

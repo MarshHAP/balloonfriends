@@ -44,7 +44,7 @@
         data-variant-id="{{ variant.id }}"
         data-variant-name="{{ variant.title | escape }}"
         data-variant-emoji="{{ emoji }}"
-        {% if variant.featured_image %}data-variant-image="{{ variant.featured_image | image_url: width: 200 }}"{% endif %}
+        {% if variant.featured_image %}data-variant-image="{{ variant.featured_image | image_url: width: 200 }}" data-variant-image-full="{{ variant.featured_image | image_url: width: 1400 }}"{% endif %}
         {% unless variant.available %}disabled title="Sold out"{% endunless %}
       >
         <span class="bundle-tile__minus" role="button" aria-label="Remove one {{ variant.title | escape }}">&minus;</span>
