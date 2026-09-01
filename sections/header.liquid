@@ -22,7 +22,7 @@
       {%- if settings.logo != blank -%}
         <img src="{{ settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}" width="150" height="44">
       {%- else -%}
-        {{ section.settings.logo_text | default: shop.name }}
+        {{ section.settings.logo_text | default: settings.brand_name | default: shop.name }}
       {%- endif -%}
     </a>
 

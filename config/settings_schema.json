@@ -11,6 +11,13 @@
     "name": "Branding",
     "settings": [
       {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Brand name",
+        "default": "Balloon Friends",
+        "info": "Shown in the header, footer, and page titles."
+      },
+      {
         "type": "image_picker",
         "id": "logo",
         "label": "Logo image"
