@@ -11,7 +11,9 @@
     {%- if product != blank and product.variants.size > 0 -%}
       <div class="featured-bundle__grid">
         <div class="featured-bundle__media animate-in">
-          {%- if product.featured_image -%}
+          {%- if section.settings.image != blank -%}
+            <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" loading="lazy" width="1200" height="1200">
+          {%- elsif product.featured_image -%}
             <img src="{{ product.featured_image | image_url: width: 1200 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="lazy" width="1200" height="1200">
           {%- else -%}
             <span aria-hidden="true">🐶🎈</span>
@@ -32,6 +34,7 @@
   "name": "Featured bundle",
   "settings": [
     { "type": "product", "id": "product", "label": "Product" },
+    { "type": "image_picker", "id": "image", "label": "Section image (defaults to product image)" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Mix & match — any 3 for 2" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Build Your Balloon Bundle" },
     {

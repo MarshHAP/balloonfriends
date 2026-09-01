@@ -2,13 +2,22 @@
   <div class="page-width">
     <div class="product-grid">
       <div class="product-gallery">
-        <div class="product-gallery__main">
+        <div class="product-gallery__main" data-gallery-main>
           {%- if product.featured_image -%}
             <img src="{{ product.featured_image | image_url: width: 1400 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="eager" width="1400" height="1400">
           {%- else -%}
             <span aria-hidden="true">🐶🎈</span>
           {%- endif -%}
         </div>
+        {%- if product.images.size > 1 -%}
+          <div class="product-gallery__thumbs" data-gallery-thumbs>
+            {%- for image in product.images -%}
+              <button type="button" class="product-gallery__thumb {% if forloop.first %}is-active{% endif %}" data-gallery-thumb data-full="{{ image | image_url: width: 1400 }}" aria-label="View image {{ forloop.index }}">
+                <img src="{{ image | image_url: width: 180 }}" alt="{{ image.alt | default: product.title | escape }}" loading="lazy" width="90" height="90">
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
       </div>
 
       <div class="product-info">

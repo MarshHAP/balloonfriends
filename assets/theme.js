@@ -216,6 +216,23 @@
   });
 
   /* ------------------------------------------------------------------ */
+  /* Product gallery thumbnails                                          */
+  /* ------------------------------------------------------------------ */
+  var galleryMain = document.querySelector('[data-gallery-main] img');
+  if (galleryMain) {
+    document.querySelectorAll('[data-gallery-thumb]').forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        galleryMain.src = thumb.dataset.full;
+        var alt = thumb.querySelector('img');
+        if (alt) galleryMain.alt = alt.alt;
+        document.querySelectorAll('[data-gallery-thumb]').forEach(function (t) {
+          t.classList.toggle('is-active', t === thumb);
+        });
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Cart page quantity controls                                         */
   /* ------------------------------------------------------------------ */
   document.querySelectorAll('[data-cart-qty]').forEach(function (wrap) {

@@ -3,6 +3,7 @@
     "hero": {
       "type": "hero",
       "settings": {
+        "image": "shopify://shop_images/bf-lifestyle-park-run.png",
         "eyebrow": "The original walking balloon pet",
         "heading": "Bouncy Walks, Bigger Smiles",
         "subheading": "Meet Balloon Friend™ — the inflatable pet that trots along on its own little legs wherever your child goes.",
@@ -14,6 +15,7 @@
       "type": "featured-bundle",
       "settings": {
         "product": "balloon-friend",
+        "image": "shopify://shop_images/bf-lifestyle-garden-party.png",
         "eyebrow": "Mix & match — any 3 for 2",
         "heading": "Build Your Balloon Bundle",
         "text": "Fifteen adorable friends to choose from. Pick any three and the cheapest one is free — automatically at checkout."
@@ -22,6 +24,7 @@
     "image_with_text": {
       "type": "image-with-text",
       "settings": {
+        "image": "shopify://shop_images/bf-lifestyle-parade-walk.png",
         "eyebrow": "How it works",
         "heading": "A Best Friend That Walks Beside Them",
         "text": "<p>Balloon Friend™ trots along on weighted little feet while your child holds the lead — just like walking a real puppy, minus the mess. Inflates in seconds, stays bouncy for weeks, and folds flat for the toy box.</p>",
