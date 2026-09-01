@@ -26,14 +26,18 @@
   <div class="bundle-grid" role="group" aria-label="Choose your Balloon Friends">
     {%- for variant in product.variants -%}
       {%- assign emoji = '🎈' -%}
-      {%- case variant.title -%}
-        {%- when 'Puppy' -%}{%- assign emoji = '🐶' -%}
-        {%- when 'Dino' -%}{%- assign emoji = '🦖' -%}
-        {%- when 'Unicorn' -%}{%- assign emoji = '🦄' -%}
-        {%- when 'Bunny' -%}{%- assign emoji = '🐰' -%}
-        {%- when 'Panda' -%}{%- assign emoji = '🐼' -%}
-        {%- when 'Kitty' -%}{%- assign emoji = '🐱' -%}
-      {%- endcase -%}
+      {%- if variant.title contains 'Puppy' or variant.title contains 'Dog' -%}{%- assign emoji = '🐶' -%}
+      {%- elsif variant.title contains 'Rooster' -%}{%- assign emoji = '🐓' -%}
+      {%- elsif variant.title contains 'Giraffe' -%}{%- assign emoji = '🦒' -%}
+      {%- elsif variant.title contains 'Elephant' -%}{%- assign emoji = '🐘' -%}
+      {%- elsif variant.title contains 'Dino' -%}{%- assign emoji = '🦕' -%}
+      {%- elsif variant.title contains 'Bunny' or variant.title contains 'Rabbit' -%}{%- assign emoji = '🐰' -%}
+      {%- elsif variant.title contains 'Pony' -%}{%- assign emoji = '🐴' -%}
+      {%- elsif variant.title contains 'Deer' -%}{%- assign emoji = '🦌' -%}
+      {%- elsif variant.title contains 'Unicorn' -%}{%- assign emoji = '🦄' -%}
+      {%- elsif variant.title contains 'Panda' -%}{%- assign emoji = '🐼' -%}
+      {%- elsif variant.title contains 'Kitty' or variant.title contains 'Cat' -%}{%- assign emoji = '🐱' -%}
+      {%- endif -%}
       <button
         type="button"
         class="bundle-tile"
