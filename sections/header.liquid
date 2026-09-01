@@ -18,11 +18,11 @@
       {%- endif -%}
     </nav>
 
-    <a class="site-header__logo" href="{{ routes.root_url }}">
+    <a class="site-header__logo" href="{{ routes.root_url }}" aria-label="{{ settings.brand_name | default: shop.name }} — home">
       {%- if settings.logo != blank -%}
-        <img src="{{ settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}" width="150" height="44">
+        <img src="{{ settings.logo | image_url: width: 300 }}" alt="{{ settings.brand_name | default: shop.name }}" width="150" height="44">
       {%- else -%}
-        {{ section.settings.logo_text | default: settings.brand_name | default: shop.name }}
+        {% render 'brand-wordmark' %}
       {%- endif -%}
     </a>
 
