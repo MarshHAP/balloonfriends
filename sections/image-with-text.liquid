@@ -1,0 +1,44 @@
+<div class="section {% if section.settings.soft_bg %}section--soft{% endif %}">
+  <div class="page-width">
+    <div class="image-with-text {% if section.settings.reverse %}image-with-text--reverse{% endif %}">
+      <div class="image-with-text__media animate-in">
+        {%- if section.settings.image != blank -%}
+          <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" loading="lazy" width="1200" height="900">
+        {%- else -%}
+          <span aria-hidden="true">{{ section.settings.placeholder_emoji }}</span>
+        {%- endif -%}
+      </div>
+      <div class="image-with-text__content animate-in">
+        {%- if section.settings.eyebrow != blank -%}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+        <h2>{{ section.settings.heading }}</h2>
+        <div>{{ section.settings.text }}</div>
+        {%- if section.settings.button_label != blank -%}
+          <a href="{{ section.settings.button_link | default: '/products/balloon-friend' }}" class="btn">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "placeholder_emoji", "label": "Placeholder emoji (until image uploaded)", "default": "🐶" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A Best Friend That Walks Beside Them" },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Balloon Friend™ trots along on weighted little feet while your child holds the lead — just like walking a real puppy, minus the mess. Inflates in seconds and folds flat for the toy box.</p>"
+    },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "checkbox", "id": "reverse", "label": "Image on right", "default": false },
+    { "type": "checkbox", "id": "soft_bg", "label": "Soft background", "default": false }
+  ],
+  "presets": [{ "name": "Image with text" }]
+}
+{% endschema %}

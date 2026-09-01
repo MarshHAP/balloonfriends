@@ -1,0 +1,52 @@
+<div class="section {% if section.settings.soft_bg %}section--soft{% endif %}">
+  <div class="page-width">
+    <div class="section__heading animate-in">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+    </div>
+    <div class="testimonials">
+      {%- for block in section.blocks -%}
+        <div class="testimonial animate-in" {{ block.shopify_attributes }}>
+          <div class="testimonial__stars" aria-label="{{ block.settings.stars }} out of 5 stars">
+            {%- for i in (1..block.settings.stars) -%}★{%- endfor -%}
+          </div>
+          <p class="testimonial__text">“{{ block.settings.quote }}”</p>
+          <p class="testimonial__author">{{ block.settings.author }} <span>{{ block.settings.detail }}</span></p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Loved by Little Adventurers" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Here's what parents are saying." },
+    { "type": "checkbox", "id": "soft_bg", "label": "Soft background", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "range", "id": "stars", "label": "Stars", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "My daughter walks her unicorn to nursery every single morning. Best £15 I've ever spent." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Sophie M." },
+        { "type": "text", "id": "detail", "label": "Detail", "default": "Verified buyer — Unicorn" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        { "type": "testimonial", "settings": { "stars": 5, "quote": "My daughter walks her unicorn to nursery every single morning. Best £15 I've ever spent.", "author": "Sophie M.", "detail": "Verified buyer — Unicorn" } },
+        { "type": "testimonial", "settings": { "stars": 5, "quote": "Bought the 3-for-2 bundle for a birthday party. The kids were entertained for hours — the puppy is still going strong weeks later.", "author": "Daniel K.", "detail": "Verified buyer — Puppy, Dino, Panda" } },
+        { "type": "testimonial", "settings": { "stars": 5, "quote": "So much sturdier than the balloon animals we've had before. Inflates in seconds and my son takes it everywhere.", "author": "Priya S.", "detail": "Verified buyer — Dino" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

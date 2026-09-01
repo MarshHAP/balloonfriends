@@ -1,0 +1,78 @@
+{%- comment -%}
+  Bundle buy box — tap-to-build 3-for-2 selector.
+  Accepts: product (product object)
+  The 3-for-2 pricing itself is applied at checkout by the store's automatic
+  Buy-2-get-1-free discount; this UI mirrors that maths so shoppers see the
+  saving before checkout.
+{%- endcomment -%}
+
+{%- assign bundle_size = settings.bundle_size | default: 3 -%}
+{%- assign bundle_free = settings.bundle_free | default: 1 -%}
+{%- assign unit_price = product.selected_or_first_available_variant.price | default: product.price -%}
+{%- assign paid_count = bundle_size | minus: bundle_free -%}
+{%- assign bundle_price = unit_price | times: paid_count -%}
+{%- assign full_price = unit_price | times: bundle_size -%}
+{%- assign saving = full_price | minus: bundle_price -%}
+
+<div class="bundle-box" id="bundle" data-bundle data-unit-price="{{ unit_price }}" data-bundle-size="{{ bundle_size }}" data-free-per-bundle="{{ bundle_free }}">
+  <div class="bundle-box__offer">
+    <span class="bundle-box__price">{{ unit_price | money }} each</span>
+    <span class="bundle-box__badge">ANY {{ bundle_size }} FOR {{ bundle_price | money }}</span>
+  </div>
+  <p class="bundle-box__hint">
+    Tap your favourite friends to build a bundle — buy {{ bundle_size }}, only pay for {{ paid_count }} and <strong>save {{ saving | money }}</strong>. The discount is applied automatically at checkout.
+  </p>
+
+  <div class="bundle-grid" role="group" aria-label="Choose your Balloon Friends">
+    {%- for variant in product.variants -%}
+      {%- assign emoji = '🎈' -%}
+      {%- case variant.title -%}
+        {%- when 'Puppy' -%}{%- assign emoji = '🐶' -%}
+        {%- when 'Dino' -%}{%- assign emoji = '🦖' -%}
+        {%- when 'Unicorn' -%}{%- assign emoji = '🦄' -%}
+        {%- when 'Bunny' -%}{%- assign emoji = '🐰' -%}
+        {%- when 'Panda' -%}{%- assign emoji = '🐼' -%}
+        {%- when 'Kitty' -%}{%- assign emoji = '🐱' -%}
+      {%- endcase -%}
+      <button
+        type="button"
+        class="bundle-tile"
+        data-variant-id="{{ variant.id }}"
+        data-variant-name="{{ variant.title | escape }}"
+        data-variant-emoji="{{ emoji }}"
+        {% if variant.featured_image %}data-variant-image="{{ variant.featured_image | image_url: width: 200 }}"{% endif %}
+        {% unless variant.available %}disabled title="Sold out"{% endunless %}
+      >
+        <span class="bundle-tile__minus" role="button" aria-label="Remove one {{ variant.title | escape }}">&minus;</span>
+        <span class="bundle-tile__qty">0</span>
+        <span class="bundle-tile__media">
+          {%- if variant.featured_image -%}
+            <img src="{{ variant.featured_image | image_url: width: 200 }}" alt="{{ variant.title | escape }}" loading="lazy" width="100" height="100">
+          {%- else -%}
+            {{ emoji }}
+          {%- endif -%}
+        </span>
+        <span class="bundle-tile__name">{{ variant.title }}</span>
+      </button>
+    {%- endfor -%}
+  </div>
+
+  <div class="bundle-progress">
+    <div class="bundle-progress__label">
+      <span data-bundle-count>Your bundle · 0 of {{ bundle_size }}</span>
+      <span class="bundle-progress__saving" data-bundle-saving hidden></span>
+    </div>
+    <div class="bundle-progress__slots" data-bundle-slots></div>
+  </div>
+
+  <div class="bundle-total" data-bundle-total></div>
+
+  <button type="button" class="btn btn--full btn--large" data-bundle-add disabled>Tap a friend to start your bundle</button>
+  <p class="bundle-box__error" data-bundle-error role="alert"></p>
+
+  <p class="bundle-box__reassure">
+    <span>🛡 30-day guarantee</span>
+    <span>🚚 Tracked shipping</span>
+    <span>🔒 Secure checkout</span>
+  </p>
+</div>

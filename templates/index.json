@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "The original walking balloon pet",
+        "heading": "Bouncy Walks, Bigger Smiles",
+        "subheading": "Meet Balloon Friend™ — the inflatable pet that trots along on its own little legs wherever your child goes.",
+        "button_label": "Shop Now",
+        "button2_label": "Build a Bundle — 3 for 2"
+      }
+    },
+    "featured_bundle": {
+      "type": "featured-bundle",
+      "settings": {
+        "product": "balloon-friend",
+        "eyebrow": "Mix & match — any 3 for 2",
+        "heading": "Build Your Balloon Bundle",
+        "text": "Six adorable friends to choose from. Pick any three and the cheapest one is free — automatically at checkout."
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "settings": {
+        "eyebrow": "How it works",
+        "heading": "A Best Friend That Walks Beside Them",
+        "text": "<p>Balloon Friend™ trots along on weighted little feet while your child holds the lead — just like walking a real puppy, minus the mess. Inflates in seconds, stays bouncy for weeks, and folds flat for the toy box.</p>",
+        "button_label": "Meet the Friends",
+        "placeholder_emoji": "🐶"
+      }
+    },
+    "comparison": {
+      "type": "comparison-table",
+      "settings": {
+        "heading": "Why Balloon Friends?",
+        "text": "Not all balloon toys are created equal.",
+        "us_label": "Balloon Friends",
+        "them_label": "Other balloon toys"
+      },
+      "blocks": {
+        "row1": { "type": "row", "settings": { "feature": "Actually walks on its own legs", "us": true, "them": false } },
+        "row2": { "type": "row", "settings": { "feature": "Weighted feet — stays upright", "us": true, "them": false } },
+        "row3": { "type": "row", "settings": { "feature": "Durable, child-safe material", "us": true, "them": false } },
+        "row4": { "type": "row", "settings": { "feature": "3-for-2 mix & match bundles", "us": true, "them": false } },
+        "row5": { "type": "row", "settings": { "feature": "30-day money-back guarantee", "us": true, "them": false } },
+        "row6": { "type": "row", "settings": { "feature": "Pops or deflates in a day", "us": false, "them": true } }
+      },
+      "block_order": ["row1", "row2", "row3", "row4", "row5", "row6"]
+    },
+    "icon_bar": {
+      "type": "icon-bar",
+      "settings": { "heading": "Shop With Total Peace of Mind", "soft_bg": true },
+      "blocks": {
+        "item1": { "type": "item", "settings": { "icon": "shield", "heading": "30-Day Guarantee", "text": "Not smiling? Full refund, no questions asked." } },
+        "item2": { "type": "item", "settings": { "icon": "chat", "heading": "24/7 Customer Care", "text": "Real humans, ready to help any time." } },
+        "item3": { "type": "item", "settings": { "icon": "truck", "heading": "Trackable Shipping", "text": "Follow your friend all the way to your door." } },
+        "item4": { "type": "item", "settings": { "icon": "heart", "heading": "Child-Safe Materials", "text": "Durable, BPA-free and made for ages 3+." } }
+      },
+      "block_order": ["item1", "item2", "item3", "item4"]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": { "heading": "Loved by Little Adventurers", "text": "Here's what parents are saying." },
+      "blocks": {
+        "t1": { "type": "testimonial", "settings": { "stars": 5, "quote": "My daughter walks her unicorn to nursery every single morning. Best £15 I've ever spent.", "author": "Sophie M.", "detail": "Verified buyer — Unicorn" } },
+        "t2": { "type": "testimonial", "settings": { "stars": 5, "quote": "Bought the 3-for-2 bundle for a birthday party. The kids were entertained for hours — the puppy is still going strong weeks later.", "author": "Daniel K.", "detail": "Verified buyer — Puppy, Dino, Panda" } },
+        "t3": { "type": "testimonial", "settings": { "stars": 5, "quote": "So much sturdier than the balloon animals we've had before. Inflates in seconds and my son takes it everywhere.", "author": "Priya S.", "detail": "Verified buyer — Dino" } }
+      },
+      "block_order": ["t1", "t2", "t3"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": { "heading": "Frequently Asked Questions" },
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "How does the 3-for-2 offer work?", "answer": "<p>Add any three Balloon Friends to your basket — mix and match any styles — and the cheapest one is automatically free at checkout. No code needed.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "How does it walk?", "answer": "<p>Each Balloon Friend comes with clip-on legs and weighted feet. Once inflated, hold the lead and it trots along beside your child as they walk.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "What age is it suitable for?", "answer": "<p>Balloon Friends are designed for children aged 3 and up, with adult supervision for younger ones.</p>" } },
+        "q4": { "type": "question", "settings": { "question": "How long does it stay inflated?", "answer": "<p>Made from tough, durable material — far thicker than a party balloon — your friend stays bouncy for weeks and can be re-inflated any time.</p>" } },
+        "q5": { "type": "question", "settings": { "question": "What if my child doesn't love it?", "answer": "<p>Every order is covered by our 30-day money-back guarantee. If you're not happy, we'll refund you in full — no questions asked.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"]
+    },
+    "contact": {
+      "type": "contact-form",
+      "settings": { "heading": "Get in Touch", "text": "Questions about your order or your new friend? We reply within 24 hours." }
+    }
+  },
+  "order": ["hero", "featured_bundle", "image_with_text", "comparison", "icon_bar", "testimonials", "faq", "contact"]
+}

@@ -1,0 +1,11 @@
+{
+  "current": {
+    "color_ink": "#2E2A39",
+    "color_accent": "#6D388B",
+    "color_bg": "#FFFFFF",
+    "color_bg_soft": "#F6F4F9",
+    "color_sale": "#DD1D1D",
+    "bundle_size": 3,
+    "bundle_free": 1
+  }
+}
