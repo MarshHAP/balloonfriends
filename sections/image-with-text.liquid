@@ -3,7 +3,11 @@
     <div class="image-with-text {% if section.settings.reverse %}image-with-text--reverse{% endif %}">
       <div class="image-with-text__media animate-in">
         {%- if section.settings.image != blank -%}
-          <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" loading="lazy" width="1200" height="900">
+          <img
+            src="{{ section.settings.image | image_url: width: 800 }}"
+            srcset="{{ section.settings.image | image_url: width: 400 }} 400w, {{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1200 }} 1200w"
+            sizes="(max-width: 749px) 100vw, 50vw"
+            alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" loading="lazy" width="1200" height="900">
         {%- else -%}
           <span aria-hidden="true">{{ section.settings.placeholder_emoji }}</span>
         {%- endif -%}

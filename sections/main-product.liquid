@@ -4,7 +4,11 @@
       <div class="product-gallery">
         <div class="product-gallery__main" data-gallery-main>
           {%- if product.featured_image -%}
-            <img src="{{ product.featured_image | image_url: width: 1400 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="eager" width="1400" height="1400">
+            <img
+              src="{{ product.featured_image | image_url: width: 800 }}"
+              srcset="{{ product.featured_image | image_url: width: 400 }} 400w, {{ product.featured_image | image_url: width: 800 }} 800w, {{ product.featured_image | image_url: width: 1200 }} 1200w, {{ product.featured_image | image_url: width: 1600 }} 1600w"
+              sizes="(max-width: 989px) 100vw, 55vw"
+              alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="eager" fetchpriority="high" width="1400" height="1400">
           {%- else -%}
             <span aria-hidden="true">🐶🎈</span>
           {%- endif -%}

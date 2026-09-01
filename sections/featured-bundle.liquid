@@ -12,7 +12,11 @@
       <div class="featured-bundle__grid">
         <div class="featured-bundle__media animate-in">
           {%- if section.settings.image != blank -%}
-            <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" loading="lazy" width="1200" height="1200">
+            <img
+            src="{{ section.settings.image | image_url: width: 800 }}"
+            srcset="{{ section.settings.image | image_url: width: 400 }} 400w, {{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1200 }} 1200w"
+            sizes="(max-width: 989px) 100vw, 55vw"
+            alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" loading="lazy" width="1200" height="1200">
           {%- elsif product.featured_image -%}
             <img src="{{ product.featured_image | image_url: width: 1200 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="lazy" width="1200" height="1200">
           {%- else -%}
