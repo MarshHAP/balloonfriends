@@ -20,7 +20,7 @@
 
     <a class="site-header__logo" href="{{ routes.root_url }}" aria-label="{{ settings.brand_name | default: shop.name }} — home">
       {%- if settings.logo != blank -%}
-        <img src="{{ settings.logo | image_url: width: 300 }}" alt="{{ settings.brand_name | default: shop.name }}" width="150" height="44">
+        <img src="{{ settings.logo | image_url: width: 600 }}" alt="{{ settings.brand_name | default: shop.name }}" width="278" height="44">
       {%- else -%}
         {% render 'brand-wordmark' %}
       {%- endif -%}

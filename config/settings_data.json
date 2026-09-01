@@ -7,6 +7,8 @@
     "color_bg_soft": "#F6F4F9",
     "color_sale": "#DD1D1D",
     "bundle_size": 3,
-    "bundle_free": 1
+    "bundle_free": 1,
+    "logo": "shopify://shop_images/bf-logo-one-line.png",
+    "favicon": "shopify://shop_images/bf-favicon.png"
   }
 }

@@ -118,7 +118,7 @@ img { max-width: 100%; height: auto; }
   justify-self: center;
   white-space: nowrap;
 }
-.site-header__logo img { max-height: 4.4rem; width: auto; display: block; }
+.site-header__logo img { max-height: 4.4rem; width: auto; max-width: min(60vw, 30rem); object-fit: contain; display: block; }
 
 /* Balloon wordmark — glossy rainbow lettering matching the brand logo */
 .brand-wordmark {
