@@ -9,6 +9,7 @@
 {%- assign bundle_size = settings.bundle_size | default: 3 -%}
 {%- assign bundle_free = settings.bundle_free | default: 1 -%}
 {%- assign unit_price = product.selected_or_first_available_variant.price | default: product.price -%}
+{%- assign was_price = product.selected_or_first_available_variant.compare_at_price -%}
 {%- assign paid_count = bundle_size | minus: bundle_free -%}
 {%- assign bundle_price = unit_price | times: paid_count | plus: bundle_free -%}
 {%- assign full_price = unit_price | times: bundle_size -%}
@@ -16,7 +17,16 @@
 
 <div class="bundle-box" id="bundle" data-bundle data-unit-price="{{ unit_price }}" data-bundle-size="{{ bundle_size }}" data-free-per-bundle="{{ bundle_free }}">
   <div class="bundle-box__offer">
-    <span class="bundle-box__price">{{ unit_price | money }} each</span>
+    <span class="bundle-box__price">
+      {%- if was_price > unit_price -%}
+        <s class="bundle-box__was">{{ was_price | money }}</s>
+      {%- endif -%}
+      {{ unit_price | money }} each
+      {%- if was_price > unit_price -%}
+        {%- assign pct_off = was_price | minus: unit_price | times: 100 | divided_by: was_price -%}
+        <span class="bundle-box__save-badge">SAVE {{ pct_off }}%</span>
+      {%- endif -%}
+    </span>
     <span class="bundle-box__badge">ANY {{ bundle_size }} FOR {{ bundle_price | money }}</span>
   </div>
   <p class="bundle-box__hint">
