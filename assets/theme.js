@@ -72,12 +72,20 @@
     }, interval);
   });
 
-  /* Swap the product gallery's main image (used when a variant tile is tapped). */
+  /* Swap the product gallery's main image (used when a variant tile is tapped).
+     The main img carries a srcset for responsive loading; a srcset always wins
+     over a JS-set src, so it must be removed when swapping. */
+  function setGalleryMain(main, fullUrl, alt) {
+    main.removeAttribute('srcset');
+    main.removeAttribute('sizes');
+    main.src = fullUrl;
+    if (alt) main.alt = alt;
+  }
+
   function showVariantImage(fullUrl, name) {
     var main = document.querySelector('[data-gallery-main] img');
     if (!main) return;
-    main.src = fullUrl;
-    if (name) main.alt = name;
+    setGalleryMain(main, fullUrl, name);
     var matched = false;
     document.querySelectorAll('[data-gallery-thumb]').forEach(function (t) {
       /* Shopify CDN URLs for the same image share a path before the query string. */
@@ -258,9 +266,8 @@
   if (galleryMain) {
     document.querySelectorAll('[data-gallery-thumb]').forEach(function (thumb) {
       thumb.addEventListener('click', function () {
-        galleryMain.src = thumb.dataset.full;
-        var alt = thumb.querySelector('img');
-        if (alt) galleryMain.alt = alt.alt;
+        var altImg = thumb.querySelector('img');
+        setGalleryMain(galleryMain, thumb.dataset.full, altImg ? altImg.alt : '');
         document.querySelectorAll('[data-gallery-thumb]').forEach(function (t) {
           t.classList.toggle('is-active', t === thumb);
         });
