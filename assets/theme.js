@@ -58,6 +58,20 @@
     });
   }
 
+  /* Hero slideshow: crossfade between background photos */
+  document.querySelectorAll('[data-hero-slideshow]').forEach(function (wrap) {
+    var slides = wrap.querySelectorAll('.hero__slide');
+    if (slides.length < 2) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var current = 0;
+    var interval = (parseInt(wrap.dataset.interval, 10) || 5) * 1000;
+    setInterval(function () {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, interval);
+  });
+
   /* Swap the product gallery's main image (used when a variant tile is tapped). */
   function showVariantImage(fullUrl, name) {
     var main = document.querySelector('[data-gallery-main] img');

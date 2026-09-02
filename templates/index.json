@@ -19,7 +19,11 @@
         "button_label": "Shop Now",
         "button_link": "",
         "button2_label": "",
-        "button2_link": ""
+        "button2_link": "",
+        "image_2": "shopify://shop_images/bf-lifestyle-garden-party.png",
+        "image_3": "shopify://shop_images/bf-lifestyle-parade-walk.png",
+        "image_4": "shopify://shop_images/bf-lifestyle-backyard-fun.png",
+        "interval": 5
       }
     },
     "featured_bundle": {
