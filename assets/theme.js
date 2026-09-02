@@ -134,8 +134,9 @@
     function render() {
       var qty = totalQty();
       var freeItems = Math.floor(qty / bundleSize) * freePerBundle;
+      var perItemSaving = unitPrice - 1; /* deal items cost 1 minor unit at checkout */
       var fullPrice = qty * unitPrice;
-      var payPrice = (qty - freeItems) * unitPrice;
+      var payPrice = fullPrice - freeItems * perItemSaving;
 
       tiles.forEach(function (tile) {
         var id = tile.dataset.variantId;
@@ -169,11 +170,11 @@
       if (countLabel) countLabel.textContent = 'Your bundle · ' + qty + ' of ' + Math.max(bundleSize, Math.ceil(qty / bundleSize) * bundleSize || bundleSize);
       if (savingLabel) {
         if (freeItems > 0) {
-          savingLabel.textContent = 'Saving ' + formatMoney(freeItems * unitPrice) + ' 🎉';
+          savingLabel.textContent = 'Saving ' + formatMoney(freeItems * perItemSaving) + ' 🎉';
           savingLabel.hidden = false;
         } else {
           var needed = bundleSize - qty;
-          savingLabel.textContent = qty === 0 ? '' : 'Add ' + needed + ' more to get 1 FREE';
+          savingLabel.textContent = qty === 0 ? '' : 'Add ' + needed + ' more — any ' + bundleSize + ' for ' + formatMoney(bundleSize * unitPrice - freePerBundle * (unitPrice - 1));
           savingLabel.hidden = qty === 0;
         }
       }

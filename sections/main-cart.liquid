@@ -19,7 +19,7 @@
       {%- if bf_qty > 0 and bf_qty < bundle_size -%}
         {%- assign missing = bundle_size | minus: bf_qty -%}
         <div class="form-status form-status--error" style="background:rgba(var(--color-accent),0.08);color:rgb(var(--color-accent));">
-          🎈 Add {{ missing }} more Balloon Friend{% if missing > 1 %}s{% endif %} to get one <strong>FREE</strong> — <a href="{{ all_products['balloon-friend'].url }}#bundle" style="color:inherit;">complete your bundle</a>.
+          🎈 Add {{ missing }} more Balloon Friend{% if missing > 1 %}s{% endif %} to unlock <strong>any 3 for £19.99</strong> — <a href="{{ all_products['balloon-friend'].url }}#bundle" style="color:inherit;">complete your bundle</a>.
         </div>
       {%- elsif bf_qty >= bundle_size -%}
         <div class="form-status form-status--success">🎉 Bundle complete — your discount is applied automatically at checkout.</div>

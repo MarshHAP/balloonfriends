@@ -16,8 +16,8 @@
       "type": "testimonials",
       "settings": { "heading": "Loved by Little Adventurers", "text": "Here's what parents are saying." },
       "blocks": {
-        "t1": { "type": "testimonial", "settings": { "stars": 5, "quote": "My daughter walks her unicorn to nursery every single morning. Best £15 I've ever spent.", "author": "Sophie M.", "detail": "Verified buyer — Unicorn" } },
-        "t2": { "type": "testimonial", "settings": { "stars": 5, "quote": "Bought the 3-for-2 bundle for a birthday party. The kids were entertained for hours — the puppy is still going strong weeks later.", "author": "Daniel K.", "detail": "Verified buyer — Puppy, Dino, Panda" } },
+        "t1": { "type": "testimonial", "settings": { "stars": 5, "quote": "My daughter walks her unicorn to nursery every single morning. Best £10 I've ever spent.", "author": "Sophie M.", "detail": "Verified buyer — Unicorn" } },
+        "t2": { "type": "testimonial", "settings": { "stars": 5, "quote": "Bought the 3-for-£19.99 bundle for a birthday party. The kids were entertained for hours — the puppy is still going strong weeks later.", "author": "Daniel K.", "detail": "Verified buyer — Puppy, Dino, Panda" } },
         "t3": { "type": "testimonial", "settings": { "stars": 5, "quote": "So much sturdier than the balloon animals we've had before. Inflates in seconds and my son takes it everywhere.", "author": "Priya S.", "detail": "Verified buyer — Dino" } }
       },
       "block_order": ["t1", "t2", "t3"]
@@ -26,7 +26,7 @@
       "type": "faq",
       "settings": { "heading": "Frequently Asked Questions" },
       "blocks": {
-        "q1": { "type": "question", "settings": { "question": "How does the 3-for-2 offer work?", "answer": "<p>Add any three Balloon Friends to your basket — mix and match any styles — and the cheapest one is automatically free at checkout. No code needed.</p>" } },
+        "q1": { "type": "question", "settings": { "question": "How does the 3 for £19.99 offer work?", "answer": "<p>Add any three Balloon Friends to your basket — mix and match any styles — and you pay just £19.99, saving £9.98 automatically at checkout. No code needed.</p>" } },
         "q2": { "type": "question", "settings": { "question": "How does it walk?", "answer": "<p>Each Balloon Friend comes with clip-on legs and weighted feet. Once inflated, hold the lead and it trots along beside your child as they walk.</p>" } }
       },
       "block_order": ["q1", "q2"]

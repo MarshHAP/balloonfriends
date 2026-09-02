@@ -1,16 +1,16 @@
 {%- comment -%}
-  Bundle buy box — tap-to-build 3-for-2 selector.
+  Bundle buy box — tap-to-build bundle selector (any 3 for £19.99).
   Accepts: product (product object)
-  The 3-for-2 pricing itself is applied at checkout by the store's automatic
-  Buy-2-get-1-free discount; this UI mirrors that maths so shoppers see the
-  saving before checkout.
+  Pricing is applied at checkout by the store's automatic discount (every
+  third item is discounted to one penny, so 3 = £19.99 exactly and larger
+  bundles scale); this UI mirrors that maths so shoppers see the saving.
 {%- endcomment -%}
 
 {%- assign bundle_size = settings.bundle_size | default: 3 -%}
 {%- assign bundle_free = settings.bundle_free | default: 1 -%}
 {%- assign unit_price = product.selected_or_first_available_variant.price | default: product.price -%}
 {%- assign paid_count = bundle_size | minus: bundle_free -%}
-{%- assign bundle_price = unit_price | times: paid_count -%}
+{%- assign bundle_price = unit_price | times: paid_count | plus: bundle_free -%}
 {%- assign full_price = unit_price | times: bundle_size -%}
 {%- assign saving = full_price | minus: bundle_price -%}
 
@@ -20,7 +20,7 @@
     <span class="bundle-box__badge">ANY {{ bundle_size }} FOR {{ bundle_price | money }}</span>
   </div>
   <p class="bundle-box__hint">
-    Tap your favourite friends to build a bundle — buy {{ bundle_size }}, only pay for {{ paid_count }} and <strong>save {{ saving | money }}</strong>. The discount is applied automatically at checkout.
+    Tap your favourite friends to build a bundle — get any {{ bundle_size }} for {{ bundle_price | money }} and <strong>save {{ saving | money }}</strong>. The discount is applied automatically at checkout.
   </p>
 
   <div class="bundle-grid" role="group" aria-label="Choose your Balloon Friends">
