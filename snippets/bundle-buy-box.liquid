@@ -23,7 +23,7 @@
       {%- endif -%}
       {{ unit_price | money }} each
       {%- if was_price > unit_price -%}
-        {%- assign pct_off = was_price | minus: unit_price | times: 100 | divided_by: was_price -%}
+        {%- assign pct_off = was_price | minus: unit_price | times: 100.0 | divided_by: was_price | round -%}
         <span class="bundle-box__save-badge">SAVE {{ pct_off }}%</span>
       {%- endif -%}
     </span>
