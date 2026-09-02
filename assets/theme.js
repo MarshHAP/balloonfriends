@@ -1,4 +1,4 @@
-/* Balloon Friends — theme scripts */
+/* Balloon Friends — theme scripts. */
 (function () {
   'use strict';
 
