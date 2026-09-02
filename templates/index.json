@@ -243,11 +243,19 @@
         "heading": "Get in Touch",
         "text": "Questions about your order or your new friend? We reply within 24 hours."
       }
+    },
+    "parade": {
+      "type": "walking-parade",
+      "settings": {
+        "product": "balloon-friend",
+        "speed": 45
+      }
     }
   },
   "order": [
     "hero",
     "featured_bundle",
+    "parade",
     "comparison",
     "icon_bar",
     "testimonials",

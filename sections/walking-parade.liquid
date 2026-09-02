@@ -1,0 +1,40 @@
+{%- assign product = all_products[section.settings.product] -%}
+
+<div class="parade" aria-hidden="true">
+  {%- if product != blank and product.variants.size > 0 -%}
+    <a class="parade__link" href="{{ product.url }}#bundle" tabindex="-1">
+      <div class="parade__track" style="--parade-duration: {{ section.settings.speed }}s;">
+        {%- for copy in (1..2) -%}
+          <div class="parade__group">
+            {%- for variant in product.variants -%}
+              {%- if variant.featured_image -%}
+                <span class="parade__pet">
+                  <img src="{{ variant.featured_image | image_url: width: 300 }}" alt="" loading="lazy" width="150" height="150">
+                </span>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </a>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Walking parade",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Walk duration (seconds per loop)",
+      "min": 20,
+      "max": 90,
+      "step": 5,
+      "default": 45
+    }
+  ],
+  "presets": [{ "name": "Walking parade" }]
+}
+{% endschema %}
