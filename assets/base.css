@@ -379,6 +379,7 @@ img { max-width: 100%; height: auto; }
 .bundle-box__reassure { display: flex; justify-content: center; gap: 1.8rem; flex-wrap: wrap; font-size: 1.25rem; color: rgba(var(--color-ink), 0.65); margin-top: 1.6rem; margin-bottom: 0; }
 
 /* Featured bundle section layout */
+.featured-bundle__solo { max-width: 72rem; margin: 0 auto; }
 .featured-bundle__grid {
   display: grid;
   grid-template-columns: 1.05fr 1fr;

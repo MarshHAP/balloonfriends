@@ -15,7 +15,7 @@
         "image": "shopify://shop_images/bf-lifestyle-park-run.png",
         "eyebrow": "",
         "heading": "Bouncy Walks, Bigger Smiles",
-        "subheading": "Meet Balloon Friend™ — the inflatable pet that trots along on its own little legs wherever your child goes.",
+        "subheading": "Meet Balloon Friend\u2122 \u2014 the inflatable pet that trots along on its own little legs wherever your child goes.",
         "button_label": "Shop Now",
         "button_link": "",
         "button2_label": "",
@@ -26,24 +26,9 @@
       "type": "featured-bundle",
       "settings": {
         "product": "balloon-friend",
-        "image": "shopify://shop_images/bf-lifestyle-garden-party.png",
-        "eyebrow": "Mix & match — any 3 for £19.99",
+        "eyebrow": "Mix & match \u2014 any 3 for \u00a319.99",
         "heading": "Build Your Balloon Bundle",
-        "text": "Fifteen adorable friends to choose from. Pick any three for just £19.99 — the discount applies automatically at checkout."
-      }
-    },
-    "image_with_text": {
-      "type": "image-with-text",
-      "settings": {
-        "image": "shopify://shop_images/bf-lifestyle-parade-walk.png",
-        "placeholder_emoji": "🐶",
-        "eyebrow": "How it works",
-        "heading": "A Best Friend That Walks Beside Them",
-        "text": "<p>Balloon Friend™ trots along on weighted little feet while your child holds the lead — just like walking a real puppy, minus the mess. Inflates in seconds, stays bouncy for weeks, and folds flat for the toy box.</p>",
-        "button_label": "Meet the Friends",
-        "button_link": "",
-        "reverse": false,
-        "soft_bg": false
+        "text": "Fifteen adorable friends to choose from. Pick any three for just \u00a319.99 \u2014 the discount applies automatically at checkout."
       }
     },
     "comparison": {
@@ -60,7 +45,7 @@
         "row2": {
           "type": "row",
           "settings": {
-            "feature": "Weighted feet — stays upright",
+            "feature": "Weighted feet \u2014 stays upright",
             "us": true,
             "them": false
           }
@@ -76,7 +61,7 @@
         "row4": {
           "type": "row",
           "settings": {
-            "feature": "3 for £19.99 mix & match bundles",
+            "feature": "3 for \u00a319.99 mix & match bundles",
             "us": true,
             "them": false
           }
@@ -167,18 +152,18 @@
           "type": "testimonial",
           "settings": {
             "stars": 5,
-            "quote": "My daughter walks her unicorn to nursery every single morning. Best £10 I've ever spent.",
+            "quote": "My daughter walks her unicorn to nursery every single morning. Best \u00a310 I've ever spent.",
             "author": "Sophie M.",
-            "detail": "Verified buyer — Unicorn"
+            "detail": "Verified buyer \u2014 Unicorn"
           }
         },
         "t2": {
           "type": "testimonial",
           "settings": {
             "stars": 5,
-            "quote": "Bought the 3-for-£19.99 bundle for a birthday party. The kids were entertained for hours — the puppy is still going strong weeks later.",
+            "quote": "Bought the 3-for-\u00a319.99 bundle for a birthday party. The kids were entertained for hours \u2014 the puppy is still going strong weeks later.",
             "author": "Daniel K.",
-            "detail": "Verified buyer — Puppy, Dino, Panda"
+            "detail": "Verified buyer \u2014 Puppy, Dino, Panda"
           }
         },
         "t3": {
@@ -187,7 +172,7 @@
             "stars": 5,
             "quote": "So much sturdier than the balloon animals we've had before. Inflates in seconds and my son takes it everywhere.",
             "author": "Priya S.",
-            "detail": "Verified buyer — Dino"
+            "detail": "Verified buyer \u2014 Dino"
           }
         }
       },
@@ -208,8 +193,8 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "How does the 3 for £19.99 offer work?",
-            "answer": "<p>Add any three Balloon Friends to your basket — mix and match any styles — and you pay just £19.99, saving £9.98 automatically at checkout. No code needed.</p>"
+            "question": "How does the 3 for \u00a319.99 offer work?",
+            "answer": "<p>Add any three Balloon Friends to your basket \u2014 mix and match any styles \u2014 and you pay just \u00a319.99, saving \u00a39.98 automatically at checkout. No code needed.</p>"
           }
         },
         "q2": {
@@ -230,14 +215,14 @@
           "type": "question",
           "settings": {
             "question": "How long does it stay inflated?",
-            "answer": "<p>Made from tough, durable material — far thicker than a party balloon — your friend stays bouncy for weeks and can be re-inflated any time.</p>"
+            "answer": "<p>Made from tough, durable material \u2014 far thicker than a party balloon \u2014 your friend stays bouncy for weeks and can be re-inflated any time.</p>"
           }
         },
         "q5": {
           "type": "question",
           "settings": {
             "question": "What if my child doesn't love it?",
-            "answer": "<p>Every order is covered by our 30-day money-back guarantee. If you're not happy, we'll refund you in full — no questions asked.</p>"
+            "answer": "<p>Every order is covered by our 30-day money-back guarantee. If you're not happy, we'll refund you in full \u2014 no questions asked.</p>"
           }
         }
       },
@@ -263,7 +248,6 @@
   "order": [
     "hero",
     "featured_bundle",
-    "image_with_text",
     "comparison",
     "icon_bar",
     "testimonials",
