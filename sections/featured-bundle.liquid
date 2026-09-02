@@ -9,8 +9,14 @@
     </div>
 
     {%- if product != blank and product.variants.size > 0 -%}
-      <div class="featured-bundle__solo animate-in">
-        {% render 'bundle-buy-box', product: product %}
+      <div class="product-grid">
+        <div class="animate-in">
+          {% render 'product-gallery', product: product %}
+        </div>
+        <div class="product-info animate-in">
+          <div class="product-info__stars">★★★★★ <span>4.9 — 2,000+ happy families</span></div>
+          {% render 'bundle-buy-box', product: product %}
+        </div>
       </div>
     {%- else -%}
       <p style="text-align:center;">Select a product for this section in the theme editor.</p>
