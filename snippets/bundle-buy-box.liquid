@@ -3,7 +3,8 @@
   Accepts: product (product object)
   Pricing is applied at checkout by the store's automatic discount (every
   third item is discounted to one penny, so 3 = £19.99 exactly and larger
-  bundles scale); this UI mirrors that maths so shoppers see the saving.
+  bundles scale); this UI mirrors that maths so shoppers see the saving
+  before checkout.
 {%- endcomment -%}
 
 {%- assign bundle_size = settings.bundle_size | default: 3 -%}
